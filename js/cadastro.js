@@ -7,6 +7,14 @@
      const feedbackMessage = document.getElementById('feedbackMessage');
      const downloadLink = document.getElementById('downloadLink');
 
+    //  login
+    const loginForm = document.getElementById('loginForm');
+    const loginEmail = document.getElementById('emailLogin');
+    const loginSenha = document.getElementById('senhaLogin');
+    const btn = document.getElementById('btn-acessar')
+    const emailErrorLogin = document.getElementById('emailErrorLogin');
+    const senhaErrorLogin = document.getElementById('senhaErrorLogin');
+
 
      const cadastro = [
         {nome: 'Joao', email: 'joao@gmail.com', senha: 'Junzai--5'}
@@ -24,7 +32,7 @@
              simulateUpload(userData);
              cadastro.push(userData)
              console.log(cadastro)
-            //  feedbackMessage.textContent = 'Cadastrado com sucesso!';
+             feedbackMessage.textContent = 'Cadastrado com sucesso!';
 
 
             
@@ -34,6 +42,27 @@
              shakeForm();
          }
      });
+
+     btn.addEventListener('click', function(e) {
+        e.preventDefault();
+    
+        
+        clearErrors();
+    
+        if (validateLogin()) {
+            const email = loginEmail.value.trim();
+            const senha = loginSenha.value.trim();
+    
+            const user = cadastro.find(user => user.email === email && user.senha === senha);
+    
+            if (user) {
+                localStorage.setItem('AcessoUsuario', user.nome);
+                window.location.href = 'dashboard.html';
+            } else {
+                showFeedback('Email ou senha incorretos!', 'error');
+            }
+        }
+    });
 
      function simulateUpload(userData) {
          showFeedback('Enviando dados...', 'info');
@@ -77,7 +106,7 @@
          if (!validateEmail()) isValid = false;
          if (!validateSenha()) isValid = false;
          if (!validateConfirmarSenha()) isValid = false;
-         if (!validateCadastro()) isValid = false
+         
 
          return isValid;
      }
@@ -163,10 +192,68 @@
          }, 820);
      }
 
-     function validateCadastro(cadastro){
-        if(cadastro == ''){
-            shakeForm();
-        }else{
-            
+
+     function validateLogin() {
+        let isValid = true;
+    
+        if (loginEmail.value.trim() === '') {
+            emailErrorLogin.textContent = 'O campo de e-mail não pode estar vazio.';
+            isValid = false;
         }
-     }
+    
+        if (loginSenha.value.trim() === '') {
+            senhaErrorLogin.textContent = 'O campo de senha não pode estar vazio.';
+            isValid = false;
+        }
+    
+        if (isValid) {
+            const email = loginEmail.value.trim();
+            const senha = loginSenha.value.trim();
+    
+            const user = cadastro.find(user => user.email === email && user.senha === senha);
+    
+            if (!user) {
+                showFeedback('Email ou senha incorretos!', 'error');
+                isValid = false;
+            }
+        }
+    
+        return isValid;
+    }
+    
+    function clearErrors() {
+        emailErrorLogin.textContent = '';
+        senhaErrorLogin.textContent = '';
+    }
+    //  function validateLogin() {
+    //     let isValid = true;
+    
+    //     if (!validateEmailLogin()) isValid = false;
+    //     if (!validateSenhaLogin()) isValid = false;
+    
+    //     return isValid;
+    // }
+    
+    // function validateEmailLogin() {
+    //     const email = loginEmail.value.trim();
+    //     const usuario = cadastro.find(usuario => usuario.email === email);
+    
+    //     if (usuario) {
+    //         return true;
+    //     } else {
+    //         setError(loginEmail, 'E-mail não encontrado.');
+    //         return false;
+    //     }
+    // }
+    
+    // function validateSenhaLogin() {
+    //     const senha = loginSenha.value.trim();
+    //     const usuario = cadastro.find(usuario => usuario.senha === senha);
+    //     if (usuario) { 
+    //         return true;
+    //     } else {
+    //         setError(loginSenha, 'A senha é invalida');
+    //         return false;
+    //     }
+    // }
+    

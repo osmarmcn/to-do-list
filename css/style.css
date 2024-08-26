@@ -69,7 +69,7 @@ body{
 .container{
     position: relative;
     width: 360px;
-    height: 700px;
+    height: 630px;
     background: none;
     transform-style: preserve-3d;
 }
@@ -78,7 +78,7 @@ body{
 .container .container-b,
 .container .container-c{
     width: 360px;
-    height: 590px;
+    height: 630px;
     position: absolute;
     background: var(--color-background);
     box-shadow: var(--shadow-md),
