@@ -18,16 +18,21 @@
            
         </div>
         <div class="container-b">
-            <form action="" class="form">
-                <h5 class="title">Cadastre-se</h5>
-                <input type="text" placeholder="nome completo">
-                <input type="text" placeholder="seu email">
-                <input type="text" placeholder="digite seu cpf">
-                <input type="text" placeholder="senha">
-                <input type="text" placeholder="confirme sua senha">
-                <input type="submit" value="Cadastrar" id="btn">
+            <form action="" class="formLogin">
+                <h1 class="title">Login</h1>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+                    <div class="error" id="senhaError"></div>
+                </div>
                 <label for="deslocar" id="btm">Faça seu login</label>
             </form>
+            <button type="submit">Acessar</button>
         </div>
         <div class="container-c">
             <h1>Cadastro de Usuário</h1>

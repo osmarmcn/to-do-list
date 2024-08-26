@@ -152,20 +152,20 @@ body{
     left: 40px;
 }
 
-.title{
+/* .title{
     width: 100%;
     text-align: center;
     line-height: 30px;
     font-size: 30px;
     font-family: bold;
-    /* color: #8d006c; */
+    color: #8d006c;
     color: white;
     text-shadow: 0px 0px 20px #ff00c4;
     position: absolute;
 
-}
+} */
 
-.container-b .form input{
+/* .container-b .formLogin input{
     position: relative;
     width: calc(100% - 80px);
     left: 40px;
@@ -189,7 +189,7 @@ body{
     left: 20px;
     background: #ffcbf9;
     box-shadow: 0px 0px 5px #000, 0px 0px 30px #c900b2;
-}
+} */
 #btm{
     position:absolute;
     bottom: 20px;
@@ -216,7 +216,7 @@ body{
 
 /* --------------------------------------- */
 
-.container-c {
+.container-b, .container-c {
     background-color: var(--color-surface);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius);
