@@ -68,11 +68,7 @@ body{
     width: 360px;
     height: 700px;
     background: none;
-    /* left: calc(50% - 175px);
-    top: calc(50% - 250px); */
     transform-style: preserve-3d;
-    /* transform: rotateY(-130deg); */
-   
 }
 
 .container .container-a,
@@ -82,7 +78,6 @@ body{
     height: 590px;
     position: absolute;
     background: var(--color-background);
-    /* background-image: var(--color-surface); */
     box-shadow: var(--shadow-md),
     inset 0px 0px 5px var(--color-background),inset 0px 0px 30px var(--color-background);
     border: 3px solid var(--color-text);
@@ -96,23 +91,25 @@ body{
 
 .container-a{
     transform: rotateY(0deg) translateZ(175px);
-    
 }
 .container-b{
     transform: rotateY(90deg) translateZ(175px);
-    
 }
 .container-c{
     transform: rotateY(180deg) translateZ(175px);
-    
 }
-.box-d{
+
+.container-d {
     transform: rotateY(270deg) translateZ(175px);
-    
 }
-.box-e{
+
+.container-e {
     transform: rotateX(-90deg) translateZ(325px);
-    
+}
+.container-a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-a .direction {
@@ -120,25 +117,17 @@ body{
     flex-direction: column;
     gap: 3rem;
 }
-.container-a .direction label{
-    position: relative;
+.container-a .direction button{
     width: 200px;
-    left: 65px;
-    top: 170px;
-    color: white;
+    color: var(--color-text);
     font-size: 20px;
-    height: 50px;
-    line-height: 50px;
-    /* margin: 30px 0px; */
     text-align: center;
-    display: block;
     background-image: linear-gradient(45deg, #8000ff, #ff00c4);
     border-radius: 25px;
     box-shadow:  0px 0px 5px #ff44f8, 0px 0px 30px #ff44f8;
     cursor: pointer;
     border: none;
     outline: none;
-
 }
 
 #sup, #btn{
@@ -152,44 +141,6 @@ body{
     left: 40px;
 }
 
-/* .title{
-    width: 100%;
-    text-align: center;
-    line-height: 30px;
-    font-size: 30px;
-    font-family: bold;
-    color: #8d006c;
-    color: white;
-    text-shadow: 0px 0px 20px #ff00c4;
-    position: absolute;
-
-} */
-
-/* .container-b .formLogin input{
-    position: relative;
-    width: calc(100% - 80px);
-    left: 40px;
-    display: block;
-    text-align: center;
-    line-height: 40px;
-    top: 40px;
-    background: rgba(255, 255, 255, 0.723);
-    outline: none;
-    border: none;
-    border-radius: 35px;
-    box-shadow: 0px 0px 5px #ff44f8, 0px 0px 30px #ff44f8;
-    margin: 20px 0px;
-    font-size: 16px;
-    
-   
-}
-
-.form input:focus{
-    width: calc(100% - 40px);
-    left: 20px;
-    background: #ffcbf9;
-    box-shadow: 0px 0px 5px #000, 0px 0px 30px #c900b2;
-} */
 #btm{
     position:absolute;
     bottom: 20px;
@@ -202,7 +153,6 @@ body{
     padding: 3px 0;
 }
 
-
 #deslocar:checked ~ .container{
     transform: rotateY(-180deg);
     cursor: pointer;
@@ -210,8 +160,8 @@ body{
 
 #deslocar2:checked ~ .container{
     transform: rotateY(-90deg);
-    
 }
+
 
 
 /* --------------------------------------- */

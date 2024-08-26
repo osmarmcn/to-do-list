@@ -12,27 +12,27 @@
     <section class="container">
         <div class="container-a">
             <div class="direction">
-                <label for="deslocar" id="sup">Login</label>
-                <label for="deslocar2" id="sup">Sing up</label>
+                <button id="loginButton" type="button" class="navButton">Login</button>
+                <button id="signupButton" type="button" class="navButton">Sign up</button>
             </div>
-           
         </div>
         <div class="container-b">
             <form action="" class="formLogin">
                 <h1 class="title">Login</h1>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="emailLogin" name="email" >
                     <div class="error" id="emailError"></div>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <input type="password" id="senhaLogin" name="senha" >
                     <div class="error" id="senhaError"></div>
                 </div>
-                <label for="deslocar" id="btm">Faça seu login</label>
             </form>
             <button type="submit">Acessar</button>
+
+            <button id="signupLink" type="button">Cadastre-se aqui</button>
         </div>
         <div class="container-c">
             <h1>Cadastro de Usuário</h1>
@@ -40,30 +40,52 @@
             <form id="cadastroForm">
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome" >
                     <div class="error" id="nomeError"></div>
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" >
                     <div class="error" id="emailError"></div>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" name="senha" required>
+                    <input type="password" id="senha" name="senha" >
                     <div class="error" id="senhaError"></div>
                 </div>
                 <div class="form-group">
                     <label for="confirmarSenha">Confirmar Senha</label>
-                    <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" >
                     <div class="error" id="confirmarSenhaError"></div>
                 </div>
                 <button type="submit">Cadastrar</button>
-    
-                <button class="voltar">Voltar</button>
+
+                
             </form>
+            <button id="loginLink" type="button">Faça seu login</button>
             <div id="downloadLink"></div>
         </div>
     </section>
+
+
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'rotateY(-90deg)';
+        });
+
+        document.getElementById('signupButton').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'rotateY(-180deg)';
+        });
+
+        document.getElementById('signupLink').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'rotateY(-180deg)';
+        });
+
+        document.getElementById('loginLink').addEventListener('click', function() {
+            document.querySelector('.container').style.transform = 'rotateY(-90deg)';
+        });
+
+    </script>
 </body>
 </html>
