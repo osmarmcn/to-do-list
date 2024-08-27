@@ -27,7 +27,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 })
 
+// funções
+function salvar(text){
+    const todo = document.createElement('div')
+    todo.classList.add('todo')
 
+    const todoTitle = document.createElement('h3')
+    todoTitle.innerText = text
+    todo.appendChild(todoTitle)
+    // console.log(todo)
+
+    const doneBtn = document.createElement('button')
+    doneBtn.classList.add('finish-todo')
+    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>'
+    todo.appendChild(doneBtn)
+
+    const editBtn = document.createElement('button')
+    editBtn.classList.add('edit-todo')
+    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>'
+    todo.appendChild(editBtn)
+
+    const deleteBtn = document.createElement('button')
+    deleteBtn.classList.add('remove-todo')
+    deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    todo.appendChild(deleteBtn)
+
+
+    todoList.appendChild(todo)
+
+    todoInput.value = ''
+    todoInput.focus()
+
+}
+
+
+const toggleForms = () =>{
+    editForm.classList.toggle('hide')
+    todoForm.classList.toggle('hide')
+    todoList.classList.toggle('hide')
+}
+
+
+// eventos
 todoForm.addEventListener('submit', (e) =>{
     e.preventDefault()
 
@@ -41,33 +82,31 @@ todoForm.addEventListener('submit', (e) =>{
 
 })
 
-function salvar(){
-    const todo = document.createElement('div')
-    todo.classList.add('todo')
+document.addEventListener('click', (e) =>{
+    const elemento = e.target
+    const paiElemento = elemento.closest('div')
 
-    const todoTitle = document.createElement('h3')
-    todoTitle.innerText = Text
-    todo.appendChild(todoTitle)
-    // console.log(todo)
+    if(elemento.classList.contains('finish-todo')){
+        // console.log('clicou em finalizar')
+        paiElemento.classList.toggle('done')
 
-    const doneBtn = document.createElement('button')
-    doneBtn.classList.add('finish-btn')
-    doneBtn.innerHTML = '<i class="fa-solid fa-check"></i>'
-    todo.appendChild(doneBtn)
+    }
 
-    const editBtn = document.createElement('button')
-    editBtn.classList.add('edit-todo')
-    editBtn.innerHTML = '<i class="fa-solid fa-pen"></i>'
-    todo.appendChild(editBtn)
+    if(elemento.classList.contains('remove-todo')){
+        paiElemento.remove()
+    }
 
-    const deleteBtn = document.createElement('button')
-    deleteBtn.classList.add('remove-btn')
-    deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
-    todo.appendChild(deleteBtn)
+    if(elemento.classList.contains('edit-todo')){
+        toggleForms()
+    }
 
 
-    todoList.appendChild(todo)
 
-    todoInput.value = ''
+})
 
-}
+
+cancelEditBtn.addEventListener('click', (e) =>{
+    e.preventDefault()
+    toggleForms()
+})
+
