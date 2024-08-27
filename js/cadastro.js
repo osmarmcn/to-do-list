@@ -17,7 +17,7 @@
 
 
      const cadastro = [
-        {nome: 'Joao', email: 'joao@gmail.com', senha: 'Junzai--5'}
+        {nome: 'João', email: 'joao@gmail.com', senha: 'Junzai--5'}
      ]
 
      form.addEventListener('submit', (e) => {
