@@ -69,7 +69,8 @@ body{
 .container{
     position: relative;
     width: 360px;
-    height: 630px;
+    height: 630px ;
+    
     background: none;
     transform-style: preserve-3d;
 }
@@ -78,7 +79,7 @@ body{
 .container .container-b,
 .container .container-c{
     width: 360px;
-    height: 630px;
+    height: 630px ;
     position: absolute;
     background: var(--color-background);
     box-shadow: var(--shadow-md),
@@ -111,8 +112,16 @@ body{
 }
 .container-a{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 5rem;
+}
+
+.container-a h2{
+    border-bottom: 1px solid var(--color-text);
+    padding: var(--font-size-md);
+    color: var(--color-text);
 }
 
 .container-a .direction {
@@ -256,19 +265,45 @@ button::after {
     transform: scale(1, 1) translate(-50%);
     transform-origin: 50% 50%;
 }
-
-.voltar{
-    width: 100%;
-    padding: var(--spacing-sm);
-    background-color: transparent;
+.container-b p{
+    text-align: center;
+    margin: .7rem;
     color: var(--color-text);
-    border: 2px solid var(--color-text);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size-md);
-    cursor: pointer;
-    transition: all var(--transition-normal);
+    border-bottom: 1px solid var(--color-text);
+    padding: var(--spacing-sm);
+}
+.signupLink{
+    background: var(--color-text);
+    border: 3px solid transparent;
+    color: var(--color-surface);
+    font-weight: bold;
 
-    margin-top: 1rem;
+    transition: .4s ease-in-out;
+  
+}
+
+.signupLink:hover{
+    background: transparent;
+    border: 3px solid var(--color-text);
+    color: var(--color-text);
+
+}
+
+.loginLink{
+    background: var(--color-text);
+    border: 3px solid transparent;
+    color: var(--color-surface);
+    font-weight: bold;
+    margin-top: var(--spacing-lg);
+
+    transition: .4s ease-in-out;
+}
+
+.loginLink:hover{
+    background: transparent;
+    border: 3px solid var(--color-text);
+    color: var(--color-text);
+
 }
 
 @keyframes ripple {

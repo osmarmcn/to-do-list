@@ -225,35 +225,5 @@
         emailErrorLogin.textContent = '';
         senhaErrorLogin.textContent = '';
     }
-    //  function validateLogin() {
-    //     let isValid = true;
     
-    //     if (!validateEmailLogin()) isValid = false;
-    //     if (!validateSenhaLogin()) isValid = false;
-    
-    //     return isValid;
-    // }
-    
-    // function validateEmailLogin() {
-    //     const email = loginEmail.value.trim();
-    //     const usuario = cadastro.find(usuario => usuario.email === email);
-    
-    //     if (usuario) {
-    //         return true;
-    //     } else {
-    //         setError(loginEmail, 'E-mail não encontrado.');
-    //         return false;
-    //     }
-    // }
-    
-    // function validateSenhaLogin() {
-    //     const senha = loginSenha.value.trim();
-    //     const usuario = cadastro.find(usuario => usuario.senha === senha);
-    //     if (usuario) { 
-    //         return true;
-    //     } else {
-    //         setError(loginSenha, 'A senha é invalida');
-    //         return false;
-    //     }
-    // }
     
