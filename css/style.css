@@ -55,7 +55,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    perspective: 2000px;
+    perspective: 3000px;
 
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ body{
 .container{
     position: relative;
     width: 360px;
-    height: 630px ;
+    height: 730px ;
     
     background: none;
     transform-style: preserve-3d;
@@ -79,7 +79,7 @@ body{
 .container .container-b,
 .container .container-c{
     width: 360px;
-    height: 630px ;
+    height: 730px ;
     position: absolute;
     background: var(--color-background);
     box-shadow: var(--shadow-md),
@@ -230,6 +230,12 @@ input:focus {
     margin-top: var(--spacing-xs);
 }
 
+.errorLogin{
+    color: var(--color-error);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing-xs);
+}
+
 button {
     width: 100%;
     padding: var(--spacing-sm);
@@ -347,6 +353,27 @@ button:focus:not(:active)::after {
 }
 
 #feedbackMessage.error {
+    background-color: var(--color-error);
+    color: var(--color-text);
+}
+
+#feedbackMessageLogin {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all var(--transition-normal);
+}
+
+#feedbackMessageLogin.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#feedbackMessageLogin.errorLogin {
     background-color: var(--color-error);
     color: var(--color-text);
 }

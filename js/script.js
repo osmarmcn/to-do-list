@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const scrollRevealOptions = {
-        distance: '100px',
+        distance: '130px',
         duration: 3000,
-        reset: true,
+        reset: false,
         origin: 'bottom'
     };
     // Revela o container-a primeiro

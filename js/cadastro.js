@@ -5,6 +5,7 @@
      const senha = document.getElementById('senha');
      const confirmarSenha = document.getElementById('confirmarSenha');
      const feedbackMessage = document.getElementById('feedbackMessage');
+    
      const downloadLink = document.getElementById('downloadLink');
 
     //  login
@@ -14,6 +15,7 @@
     const btn = document.getElementById('btn-acessar')
     const emailErrorLogin = document.getElementById('emailErrorLogin');
     const senhaErrorLogin = document.getElementById('senhaErrorLogin');
+    const feedbackMessageLogin = document.getElementById('feedbackMessageLogin')
 
 
      const cadastro = [
@@ -59,7 +61,7 @@
                 localStorage.setItem('AcessoUsuario', user.nome);
                 window.location.href = 'dashboard.html';
             } else {
-                showFeedback('Email ou senha incorretos!', 'error');
+                showFeedbackLogin('Email ou senha incorretos!', 'error');
             }
         }
     });
@@ -70,7 +72,7 @@
          setTimeout(() => {
              if (Math.random() < 0.9) {
                  showFeedback('Cadastro realizado com sucesso!', 'success');
-                 createDownloadLink(userData);
+                //  createDownloadLink(userData);
                  form.reset();
              } else {
                  showFeedback('Erro ao cadastrar. Por favor, tente novamente.', 'error');
@@ -79,25 +81,40 @@
      }
 
      function showFeedback(message, type) {
-         feedbackMessage.textContent = message;
-         feedbackMessage.className = `show ${type}`;
+       
+            feedbackMessage.textContent = message;
+            feedbackMessage.className = `show ${type}`;
          
-         setTimeout(() => {
-             feedbackMessage.className = '';
-         }, 5000);
-     }
+            setTimeout(() => {
+                feedbackMessage.className = '';
+            }, 5000);
+            
+     }  
 
-     function createDownloadLink(userData) {
-         const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userData));
-         const dlAnchorElem = document.createElement('a');
-         dlAnchorElem.setAttribute("href", dataStr);
-         dlAnchorElem.setAttribute("download", "cadastro_usuario.json");
-         dlAnchorElem.textContent = "Clique aqui para baixar o cadastro em JSON";
+    function showFeedbackLogin(message, type){
+            feedbackMessageLogin.textContent = message;
+            feedbackMessageLogin.className = `show ${type}`
+
+            setTimeout(() => {
+                feedbackMessageLogin.className = '';
+            }, 5000);
+        }
+
+        
          
-         downloadLink.innerHTML = '';
-         downloadLink.appendChild(dlAnchorElem);
-         downloadLink.style.display = 'block';
-     }
+     
+
+    //  function createDownloadLink(userData) {
+    //      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userData));
+    //      const dlAnchorElem = document.createElement('a');
+    //      dlAnchorElem.setAttribute("href", dataStr);
+    //      dlAnchorElem.setAttribute("download", "cadastro_usuario.json");
+    //      dlAnchorElem.textContent = "Clique aqui para baixar o cadastro em JSON";
+         
+    //      downloadLink.innerHTML = '';
+    //      downloadLink.appendChild(dlAnchorElem);
+    //      downloadLink.style.display = 'block';
+    //  }
 
      function validateForm() {
          let isValid = true;
@@ -213,7 +230,7 @@
             const user = cadastro.find(user => user.email === email && user.senha === senha);
     
             if (!user) {
-                showFeedback('Email ou senha incorretos!', 'error');
+                showFeedbackLogin('Email ou senha incorretos!', 'error');
                 isValid = false;
             }
         }
