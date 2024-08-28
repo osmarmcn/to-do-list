@@ -64,25 +64,26 @@ h2{
     align-items: center;
     justify-content: center;
 
-    background:rgb(239, 234, 234);
+    background:rgb(223, 215, 215);
     
 }
 
 button {
     background-color: #fdfdfd;
-    color: #102f5e;
+    
     border: 2px solid #102f5e;
-    padding: 0.3rem 0.6rem;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
     transition: 0.4s;
   }
   
   button:hover {
-    background-color: #102f5e;
+    background-color: #0ef;
   }
   
   button:hover > i {
@@ -91,13 +92,22 @@ button {
   
   button i {
     pointer-events: none;
-    color: #102f5e;
+    color:#0ef;
+    font-size: 1.2rem;
     font-weight: bold;
   }
   
   input,
   select {
-    padding: 0.25rem 0.5rem;
+   width: 100%;
+   padding: .6rem ;
+
+  
+  }
+
+  select option{
+    font-weight: bold;
+    font-size: 1rem;
   }
   
   .hide {
@@ -106,17 +116,24 @@ button {
   
   /* Todo Header */
   .conteudo-todo {
-    max-width: 450px;
-    margin: 3rem auto 0;
+    max-width: 650px;
+    width: 800px;
+    /* margin: 3rem auto 0; */
     background-color: #423e3e;
     padding: 1.5rem;
     border-radius: 15px;
   }
   
-  .conteudo-todo header {
-    text-align: center;
+  .conteudo-todo .header {
+   
     padding: 0 1rem 1rem;
-    border-bottom: 1px solid #ccc;
+    
+  }
+
+  .conteudo-todo .header h1{
+     text-align: center;
+     color: #ccc;
+     
   }
   
   /* Todo Form */
@@ -130,6 +147,7 @@ button {
   #edit-form p {
     margin-bottom: 0.5rem;
     font-weight: bold;
+    color: #ccc;
   }
   
   .form-controle {
@@ -142,14 +160,21 @@ button {
   
   #cancel-edit-btn {
     margin-top: 1rem;
-    color: #444;
+    color: #8b0000cc;
   }
+
+  #cancel-edit-btn:hover {
+    color: #fff;
+    background: #8b0000cc;
+  }
+  
   
   /* Todo Toolbar */
   #toolbar {
     padding: 1rem;
     border-bottom: 1px solid #ccc;
     display: flex;
+  
   }
   
   #toolbar h4 {
@@ -163,6 +188,10 @@ button {
     width: 65%;
     display: flex;
     flex-direction: column;
+  }
+
+  #search h4{
+    color: #fff;
   }
   
   #search form {
@@ -178,6 +207,10 @@ button {
     width: 35%;
     display: flex;
     flex-direction: column;
+  }
+
+  #filter h4{
+    color: #fff;
   }
   
   #filter select {
@@ -196,7 +229,8 @@ button {
   
   .todo h3 {
     flex: 1;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    color: #fff;
   }
   
   .todo button {
@@ -208,7 +242,7 @@ button {
   }
   
   .done h3 {
-    color: #fff;
+    color: #f4eded;
     text-decoration: line-through;
     font-style: italic;
   }

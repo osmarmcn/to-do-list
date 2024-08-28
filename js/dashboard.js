@@ -12,7 +12,17 @@ const filterBtn = document.getElementById("filter-select")
 
 let oldInputValue
 
+document.addEventListener('DOMContentLoaded', () => {
+    
+  const usuario = localStorage.getItem('AcessoUsuario')
 
+  if (usuario) {
+     
+      const nome = document.querySelector('h1.nome')
+      nome.textContent = `Seja bem-vindo, ${usuario}!`
+  }
+
+})
 
 const saveTodo = (text, done = 0, save = 1) => {
     const todo = document.createElement("div");
